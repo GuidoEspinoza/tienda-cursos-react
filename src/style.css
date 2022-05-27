@@ -1,0 +1,60 @@
+.App {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 50px;
+    background-color: #6200ea;
+    color: #fff;
+    border-bottom: 8px solid #33007b;
+    height: 70px;
+}
+.iconoNavbar {
+    width: 100px;
+}
+
+.iconoNavbar img {
+    width: 50px;
+}
+
+.navbar h3 {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.menuNavBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.menuNavBar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+}
+
+.menuNavBar a:hover {
+    border-bottom: 2px solid black;
+    transition: border-bottom 0.4s ease;
+}
+
+.containerContent {
+    width: 100%;
+    height: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
