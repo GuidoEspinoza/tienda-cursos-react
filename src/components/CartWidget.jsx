@@ -1,4 +1,4 @@
-import logoCheems from '../Cheems.png'
+import logoCheems from '../assets/img/Cheems.png'
 
 const CartWidget = () => {
     return (
