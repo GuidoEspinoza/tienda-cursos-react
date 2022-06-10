@@ -51,15 +51,128 @@
     transition: border-bottom 0.4s ease;
 }
 
+.imageHome {
+    width: 400px;
+    margin-top: 2rem;
+}
+
 .containerContent {
+    padding-top: 5rem;
     width: 100%;
-    height: 20vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .cardContainer {
     display: flex;
     justify-content: center;
+}
+
+.btnProductPLP a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.imgPDP {
+    max-width: 500px;
+}
+
+
+.tituloDetalleProducto {
+    text-align: center;
+}
+
+.colImgPDP {
+    display: flex;
+    justify-content: center;
+}
+
+.rowContainerPDP {
+    margin-top: 2rem;
+    border: 2px solid #777;
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.rowBtnCursoPDP {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.btnCursoPDP {
+    width: 50%;
+}
+
+.colDetallesPDP {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.categoriaDetallePDP,
+.categoriaDetallePLP {
+    text-transform: capitalize;
+}
+
+.containerListItems {
+    padding-bottom: 6rem;
+}
+
+.tituloPLP {
+    text-align: center;
+}
+
+.listItems {
+    margin-top: 1rem;
+}
+
+.containerFooter {
+    height: 4rem;
+    background-color: #6200ea;
+    color: #fff;
+    border-top: 8px solid #33007b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    position: fixed;
+    bottom: 0;
+}
+
+.navbar-collapse {
+    background-color: #6200ea;
+    z-index: 2;
+}
+
+.containerFooter p {
+    margin: 0;
+    text-align: center;
+}
+
+.colDetallesPDP p {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.colDetallesPDP span {
+    font-weight: 200;
+}
+
+@media (max-width: 425px) {
+    .navbar {
+        padding: 0 0.5rem 0 0.5rem;
+    }
+
+    .imgPDP {
+        max-width: 300px;
+
+    }
+
+    .containerContent {
+        padding-top: 2rem;
+    }
+    
 }

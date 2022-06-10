@@ -1,16 +1,27 @@
 import './style.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 import ItemListContainer from './container/ItemListContainer';
-import Container from 'react-bootstrap/Container'
+import ItemListCategoryContainer from './container/itemListCategoryContainer';
+import ItemDetailContainer from './container/ItemDetailContainer';
+import ContentHome from './container/Home';
+
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-      <Container fluid="md" className='mt-5'>
-        <ItemListContainer name="Developer" />
-      </Container>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <NavBar />
+        <Routes>
+          <Route path='/' element={<ContentHome />} />
+          <Route path='/cursos' element={<ItemListContainer />} />
+          <Route path='/categoria/:categoryId' element={<ItemListCategoryContainer />} />
+          <Route path='/detalle/:productId' element={<ItemDetailContainer />} />
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 

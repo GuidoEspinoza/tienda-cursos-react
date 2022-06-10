@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
 import { getProducts } from '../ItemsProducts'
 import ItemList from '../components/ItemList'
+import { Container } from 'react-bootstrap'
 
-const ItemListContainer = (props) => {
+
+const ItemListContainer = () => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
@@ -12,10 +14,10 @@ const ItemListContainer = (props) => {
     }, [])
 
     return (
-        <div>
-            <h1 className='Titulo'>{props.greeting}</h1>
+        <Container fluid="md" className='mt-5 containerListItems'>
+            <h1 className='tituloPLP'>Cursos disponibles</h1>
             <ItemList products={products}/>
-        </div>
+        </Container>
     )
 }
 
