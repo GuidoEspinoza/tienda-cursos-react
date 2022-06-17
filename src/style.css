@@ -102,10 +102,6 @@
     margin-top: 3rem;
 }
 
-.btnCursoPDP {
-    width: 50%;
-}
-
 .colDetallesPDP {
     display: flex;
     flex-direction: column;
@@ -159,6 +155,21 @@
 
 .colDetallesPDP span {
     font-weight: 200;
+}
+
+.quantityPDP {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.numberQuantityPDP {
+    padding: 0 2rem;
+}
+
+.buttonEndShipping {
+    display: flex;
+    justify-content: center;
 }
 
 @media (max-width: 425px) {

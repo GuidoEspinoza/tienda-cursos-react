@@ -1,7 +1,19 @@
 import { Col, Row, Button } from "react-bootstrap"
-import { getProducts } from '../ItemsProducts'
+import { useState, useContext } from 'react'
+import ItemCount from "../components/ItemCount"
+import CartContext from '../context/CartContext'
+import { Link } from 'react-router-dom'
 
-const ItemDetail = ({ id, name, price, category, image, description }) => {
+const ItemDetail = ({ id, name, price, category, image, description, stock }) => {
+
+    const [quantityAdded, setQuantityAdded] = useState(0)
+
+    const { addItem } = useContext(CartContext)
+
+    const handleOnAdd = (quantity) => {
+        addItem({ id, image, name, price, quantity})
+        setQuantityAdded(quantity)
+    }
 
     return (
         <Row className="rowContainerPDP">
@@ -13,7 +25,10 @@ const ItemDetail = ({ id, name, price, category, image, description }) => {
                 <Row><p className="precioCursoPDP">Precio: <span className="precioDetallePDP">{price}</span> </p></Row>
                 <Row><p className="categoriaCursoPDP">Categoría: <span className="categoriaDetallePDP">{category?.replace('-', ' ')}</span></p></Row>
                 <Row><p className="descripcionCursoPDP">Descripción: <span className="descripcionDetallePDP">{description}</span></p></Row>
-                <Row className="rowBtnCursoPDP"><Button className="btnCursoPDP">Comprar</Button></Row>
+                <Row>{ quantityAdded === 0 
+                    ?  <ItemCount stock={stock} onAdd={handleOnAdd} />
+                    :  <Link className="buttonEndShipping" to='/cart'><Button>Terminar compra</Button></Link>
+                }</Row>
             </Col>
         </Row>
     )

@@ -6,22 +6,26 @@ import ItemListContainer from './container/ItemListContainer';
 import ItemListCategoryContainer from './container/itemListCategoryContainer';
 import ItemDetailContainer from './container/ItemDetailContainer';
 import ContentHome from './container/Home';
+import { CartProvider } from './context/CartContext'
 
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <NavBar />
-        <Routes>
-          <Route path='/' element={<ContentHome />} />
-          <Route path='/cursos' element={<ItemListContainer />} />
-          <Route path='/categoria/:categoryId' element={<ItemListCategoryContainer />} />
-          <Route path='/detalle/:productId' element={<ItemDetailContainer />} />
-        </Routes>
-        <Footer />
-      </div>
-    </BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
+        <div className="App">
+          <NavBar />
+          <Routes>
+            <Route path='/' element={<ContentHome />} />
+            <Route path='/cursos' element={<ItemListContainer />} />
+            <Route path='/categoria/:categoryId' element={<ItemListCategoryContainer />} />
+            <Route path='/detalle/:productId' element={<ItemDetailContainer />} />
+            <Route path='/cart' element={<h1>Carrito de Compras</h1>} />
+          </Routes>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 
