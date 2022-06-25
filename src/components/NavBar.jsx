@@ -1,15 +1,17 @@
-import CartWidget from "./CartWidget"
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from "react-bootstrap/NavDropdown"
+import logoCheems from '../assets/img/Cheems.png'
+import CartWidget from './CartWidget'
 
 const NavBar = () => {
     return (
-        <div>
             <Navbar expand="lg" collapseOnSelect variant="dark">
                 <Container fluid>
-                <CartWidget />
+                    <div className='iconoNavbar'>
+                        <img src={logoCheems} alt="logo" />
+                    </div>
                     <Navbar.Brand href="/">Cursos Guido Espinoza</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
@@ -26,10 +28,9 @@ const NavBar = () => {
                             </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>
+                    <CartWidget />
                 </Container>
             </Navbar>
-
-        </div>
     )
 }
 

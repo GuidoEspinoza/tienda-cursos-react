@@ -163,6 +163,17 @@
     align-items: center;
 }
 
+.CartImg {
+    width: 40px;
+    height: auto;
+    padding-right: 0.5rem;
+}
+
+.imageProductMiniCart {
+    width: 150px;
+    height: auto;
+}
+
 .numberQuantityPDP {
     padding: 0 2rem;
 }
