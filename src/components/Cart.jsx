@@ -5,10 +5,9 @@ import { Link } from "react-router-dom"
 
 const Cart = () => {
 
-    const { cart, removeItem, isInCart } = useContext(CartContext)
+    const { cart, removeItem} = useContext(CartContext)
 
-    // console.log(cart, 'cart')
-    console.log(isInCart, 'isInCart')
+    console.log(cart, 'cart')
 
     return (
         <>

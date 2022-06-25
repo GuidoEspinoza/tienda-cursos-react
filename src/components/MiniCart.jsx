@@ -5,10 +5,9 @@ import { Link } from "react-router-dom"
 
 const MiniCart = () => {
 
-    const { cart, removeItem, isInCart } = useContext(CartContext)
+    const { cart, removeItem } = useContext(CartContext)
 
     console.log(cart, 'minicart')
-    console.log(isInCart, 'isInCart')
 
     return (
         <>
@@ -20,9 +19,9 @@ const MiniCart = () => {
                     </div>
 
                     :
-                    cart.forEach((item) => (
+                    cart.map((item) => (
                         <>
-                            <Row>
+                            <Row key={item.id}>
                                 <Col><img className="imageProductMiniCart" src={item.image} alt='' /></Col>
                                 <Col>
                                     <Row><h2>{item.name}</h2></Row>
