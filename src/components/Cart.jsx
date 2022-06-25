@@ -31,7 +31,7 @@ const Cart = () => {
                             </Row>
                             <Row>
                                 <Col>Cantidad: {item.quantity}</Col>
-                                <Col><Button onClick={removeItem(item.id)}>Eliminar</Button></Col>
+                                <Col><Button onClick={() => removeItem(item.id)}>Eliminar</Button></Col>
                             </Row>
                         </Container>
                         </>
