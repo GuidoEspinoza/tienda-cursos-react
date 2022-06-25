@@ -7,7 +7,7 @@ import MiniCart from "./MiniCart";
 
 const CartWidget = () => {
 
-    const { totalQuantity, clearCart } = useContext(CartContext)
+    const { getQuantity, clearCart } = useContext(CartContext)
 
     const [show, setShow] = useState(false);
 
@@ -19,7 +19,7 @@ const CartWidget = () => {
         <>
             <Button variant="primary" onClick={handleShow} className="me-2">
                 <img src={logoCarrito} alt='cart' className='CartImg' />
-                <span>{totalQuantity}</span>
+                <span>{getQuantity()}</span>
             </Button>
             <Offcanvas show={show} onHide={handleClose} placement={'end'}>
                 <Offcanvas.Header closeButton>

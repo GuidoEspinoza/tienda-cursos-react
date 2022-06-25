@@ -4,27 +4,40 @@ const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([])
-    const [totalQuantity, setTotalQuantity] = useState(0)
-    // console.log(totalQuantity, 'Cantidad Total')
+    
     console.log(cart, 'CartContext')
 
-    useEffect(() => {
-        let totalQuantity = 0
-        cart.forEach(prod => {
-            totalQuantity += prod.quantity
-        })
-        setTotalQuantity(totalQuantity)
-    }, [cart])
-  
     const addItem = (productToAdd) => {
-      if(!isInCart(productToAdd.id)) {
-        setCart([...cart, productToAdd])
-      }
+        if (!isInCart(productToAdd.id)) {
+            setCart([...cart, productToAdd])
+        } else {
+            const newProducts = cart.map(prod => {
+                if (prod.id === productToAdd.id) {
+                    const newProduct = {
+                        ...prod,
+                        quantity: productToAdd.quantity
+                    }
+                    return newProduct
+                } else {
+                    return prod
+                }
+            })
+            setCart(newProducts)
+        }
     }
 
     const removeItem = (id) => {
-        const cartWithoutProduct = cart.filter(prod => prod.id !== id) 
+        const cartWithoutProduct = cart.filter(prod => prod.id !== id)
         setCart(cartWithoutProduct)
+    }
+
+    const getQuantity = () => {
+        let count = 0
+        cart.forEach(prod => {
+            count += prod.quantity
+        })
+
+        return count
     }
 
     const isInCart = (id) => {
@@ -35,17 +48,32 @@ export const CartProvider = ({ children }) => {
         setCart([])
     }
 
+    const getQuantityProd = (id) => {
+        return cart.find(prod => prod.id === id)?.quantity
+    }
+
+    const getTotal = () => {
+        let total = 0
+        cart.forEach(prod => {
+            total += prod.quantity * prod.price
+        })
+        
+        return total
+    }
+
     return (
-        <CartContext.Provider value={{ 
+        <CartContext.Provider value={{
             cart,
-            totalQuantity, 
+            // totalQuantity,
             addItem,
             removeItem,
             isInCart,
-            clearCart
-            // getCartQuantity
+            clearCart,
+            getQuantity,
+            getQuantityProd,
+            getTotal
         }}>
-            { children }
+            {children}
         </CartContext.Provider>
     )
 }
