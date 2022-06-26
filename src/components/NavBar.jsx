@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav'
 import NavDropdown from "react-bootstrap/NavDropdown"
 import logoCheems from '../assets/img/Cheems.png'
 import CartWidget from './CartWidget'
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
     return (
@@ -12,19 +13,19 @@ const NavBar = () => {
                     <div className='iconoNavbar'>
                         <img src={logoCheems} alt="logo" />
                     </div>
-                    <Navbar.Brand href="/">Cursos Guido Espinoza</Navbar.Brand>
+                    <Navbar.Brand className='titleNavbar'><Link to={'/'}>Cursos Guido Espinoza</Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="/">Home</Nav.Link>
-                            <NavDropdown title="Cursos" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="/categoria/desarrollo-web">Desarrollo Web</NavDropdown.Item>
+                            <Nav.Link className='itemHomeNavbar'><Link to={'/'}>Home</Link></Nav.Link>
+                            <NavDropdown className='itemCursosNavbar' title="Cursos" id="basic-nav-dropdown">
+                                <NavDropdown.Item><Link to={'/categoria/desarrollo-web'}>Desarrollo Web</Link></NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item href="/categoria/programacion">Programación</NavDropdown.Item>
+                                <NavDropdown.Item><Link to={'/categoria/programacion'}>Programación</Link></NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item href="/categoria/control-de-versiones">Control de Versiones</NavDropdown.Item>
+                                <NavDropdown.Item><Link to={'/categoria/control-de-versiones'}>Control de Versiones</Link></NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item href="/cursos">Todos los cursos</NavDropdown.Item>
+                                <NavDropdown.Item><Link to={'/cursos'}>Todos los Cursos</Link></NavDropdown.Item>
                             </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>

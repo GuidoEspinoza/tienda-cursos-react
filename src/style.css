@@ -35,20 +35,8 @@
     width: 70%;
 }
 
-.menuNavBar a {
-    color: #fff;
+.itemCursosNavbar a {
     text-decoration: none;
-    font-weight: 700;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 150px;
-    height: 50px;
-}
-
-.menuNavBar a:hover {
-    border-bottom: 2px solid black;
-    transition: border-bottom 0.4s ease;
 }
 
 .imageHome {
@@ -170,8 +158,80 @@
 }
 
 .imageProductMiniCart {
-    width: 150px;
+    width: 120px;
     height: auto;
+}
+
+.imageProductCart {
+    width: auto;
+    height: 150px;
+}
+
+.containerCart {
+    padding: 2rem;
+}
+
+.rowItemCart {
+    align-items: center;
+    border: 2px solid #000;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 1rem;
+    text-align: center;
+}
+
+.btnInfMiniCart {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.bntPagarMiniCart a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.bntLimpiarMiniCart {
+    color: #000 !important;
+    background-color: transparent;
+    border: 2px solid #0d6efd;
+    border-radius: 4px;
+}
+
+.bntLimpiarMiniCart:hover {
+    color: #fff !important;
+    background-color: #e54c21;
+    border: 2px solid #e54c21;
+    border-radius: 4px;
+}
+
+.bntRemoveMinicartItem,
+.bntRemoveMinicartItem:hover {
+    color: #fff !important;
+    background-color: #e54c21;
+    border: 2px solid #e54c21;
+    border-radius: 4px;
+}
+
+.itemMinicartQuantity,
+.itemMinicartRemove,
+.itemMinicartName,
+.itemMinicartPrice,
+.imageProductMiniCart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.itemMiniCart {
+    border: 2px solid #000;
+    margin: 1rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
 }
 
 .numberQuantityPDP {

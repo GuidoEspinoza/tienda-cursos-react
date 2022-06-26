@@ -4,6 +4,7 @@ import logoCarrito from "../assets/img/carrito-de-compras.png"
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas'
 import MiniCart from "./MiniCart";
+import { Link } from 'react-router-dom'
 
 const CartWidget = () => {
 
@@ -27,7 +28,10 @@ const CartWidget = () => {
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                     <MiniCart />
-                    <Button onClick={() => clearCart()}>Limpiar Carrito</Button>
+                    <div className="btnInfMiniCart">
+                        <Button className="bntLimpiarMiniCart" onClick={() => clearCart()}>Limpiar Carrito</Button>
+                        <Button className="bntPagarMiniCart"><Link to={'/'}>Ir a Pagar</Link></Button>
+                    </div>
                 </Offcanvas.Body>
             </Offcanvas>
         </>
