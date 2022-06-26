@@ -6,7 +6,7 @@ export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([])
     const [totalQuantity, setTotalQuantity] = useState(0)
     // console.log(totalQuantity, 'Cantidad Total')
-    console.log(cart, 'CartContext')
+    // console.log(cart, 'CartContext')
 
     useEffect(() => {
         let totalQuantity = 0

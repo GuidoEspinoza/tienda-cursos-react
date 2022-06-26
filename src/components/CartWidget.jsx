@@ -30,7 +30,7 @@ const CartWidget = () => {
                     <MiniCart />
                     <div className="btnInfMiniCart">
                         <Button className="bntLimpiarMiniCart" onClick={() => clearCart()}>Limpiar Carrito</Button>
-                        <Button className="bntPagarMiniCart"><Link to={'/'}>Ir a Pagar</Link></Button>
+                        <Button className="bntPagarMiniCart"><Link to={'/cart'}>Ir a Pagar</Link></Button>
                     </div>
                 </Offcanvas.Body>
             </Offcanvas>
