@@ -5,14 +5,13 @@ import { collection, getDocs, query, where} from 'firebase/firestore';
 import { db } from '../firebase/config';
 import {useParams} from 'react-router-dom'
 
-
 const ItemListContainer = () => {
     const [products, setProducts] = useState([])
     const {categoryId} = useParams()
 
     useEffect(() => {
         const productsRef = categoryId ? ( 
-            query(collection(db, 'items'), where('categoria', '==', categoryId))
+            query(collection(db, 'items'), where('category', '==', categoryId))
         ) : ( collection(db, 'items') )
 
         getDocs(productsRef)

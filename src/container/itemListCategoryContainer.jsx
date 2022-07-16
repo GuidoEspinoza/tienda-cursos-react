@@ -1,37 +1,37 @@
 import { useState, useEffect } from 'react'
-import { getProducts, getProductsByCategory } from '../ItemsProducts'
 import ItemList from '../components/ItemList'
 import { useParams } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
 
-const ItemListCategoryContainer = (props) => {
+import { collection, getDocs, query, where} from 'firebase/firestore';
+import { db } from '../firebase/config';
+
+const ItemListCategoryContainer = () => {
     const [productsCategory, setProductsCategory] = useState([])
     const [loading, setLoading] = useState(true)
 
     const { categoryId } = useParams()
 
-
     useEffect(() => {
-        setLoading(true)
+        const productsRef = categoryId ? ( 
+            query(collection(db, 'items'), where('category', '==', categoryId))
+        ) : ( collection(db, 'items') )
 
-        if(!categoryId) {
-            getProducts().then(prods => {
-                setProductsCategory(prods)
+        getDocs(productsRef)
+            .then((resp)=>{
+                const newItems = resp.docs.map((doc)=>{
+                    return{
+                        id: doc.id,
+                        ...doc.data() /* Data: metodo de firestore */
+                    }
+                });
+                // console.log("nuevosItems",newItems)
+                setProductsCategory(newItems)
             }).catch(error => {
-                console.log(error)
+                console.log(error, 'error')
             }).finally(() => {
                 setLoading(false)
             })
-        } else {
-            getProductsByCategory(categoryId).then(prods => {
-                setProductsCategory(prods)
-            }).catch(error => {
-                console.log(error)
-            }).finally(() => {
-                setLoading(false)
-            })
-        }
-        
     }, [categoryId])
 
     if(loading) {

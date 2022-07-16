@@ -8,7 +8,7 @@ const MiniCart = () => {
 
     const { cart, removeItem } = useContext(CartContext)
 
-    console.log(cart, 'minicart')
+    // console.log(cart, 'minicart')
 
     return (
         <>

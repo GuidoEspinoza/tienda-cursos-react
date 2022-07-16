@@ -151,6 +151,10 @@
     align-items: center;
 }
 
+.itemDescriptionCheckout {
+    font-size: 1.8rem;
+}
+
 .CartImg {
     width: 40px;
     height: auto;
@@ -164,7 +168,7 @@
 
 .imageProductCart {
     width: auto;
-    height: 150px;
+    height: 50px;
 }
 
 .containerCart {
@@ -173,11 +177,39 @@
 
 .rowItemCart {
     align-items: center;
-    border: 2px solid #000;
-    padding: 1rem;
+    border: 1px solid #000;
     border-radius: 1rem;
     margin: 1rem;
     text-align: center;
+}
+
+.columnItemCart {
+    border: 2px solid #000;
+    /* margin: 0.5rem 0; */
+}
+
+.userDetail {
+    border: 2px solid #000;
+    padding: 0.8rem;
+}
+
+.colItemsCheckout {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.rowEndCheckout {
+    margin-top: 1rem;
+}
+
+.rowCheckout {
+    column-gap: 3rem;
+}
+
+.colBtnCheckout {
+    display: flex;
+    justify-content: center;
 }
 
 .btnInfMiniCart {
